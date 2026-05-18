@@ -1,24 +1,20 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Cormorant_Garamond } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  variable: "--font-cormorant",
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "You've Got Mail",
-  description: "A special letter just for you",
+  title: "A Letter for Myles",
+  description: "You've got mail!",
 };
 
 export default function RootLayout({
@@ -29,9 +25,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full antialiased ${playfair.variable} ${cormorant.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
