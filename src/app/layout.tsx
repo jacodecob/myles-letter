@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "A Letter for Myles",
-  description: "You've got mail!",
+  title: "New Track Demo",
+  description: "Work in progress",
 };
 
 export default function RootLayout({
